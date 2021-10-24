@@ -155,6 +155,53 @@ do
 done
 ```
 
+## Do-While loop
+```bash
+#!/bin/bash
+X=0
+while [ $X -le 20 ]
+do
+	echo $X
+	X=$((X+1))
+done
+```
+
+## List of test operators
+
+| operator | produces true if...  | number of operands  |
+| -------- | -------------------- | ------------------- |
+| -n    | operand non zero length       | 1
+| -z    |	operand has zero length     |	1
+| -d    |	there exists a directory whose name is operand	| 1
+| -f    |	there exists a file whose name is operand       |	1
+| -eq   |	the operands are integers and they are equal |	2
+| -neq  |	the opposite of -eq	|2
+| =     |	the operands are equal (as strings)|	2
+| !=    |	opposite of =|	2
+| -lt   |	operand1 is strictly less than operand2 (both operands should be integers)|	2
+| -gt   |	operand1 is strictly greater than operand2 (both operands should be integers)|	2
+| -ge   |	operand1 is greater than or equal to operand2 (both operands should be integers)|	2
+| -le   |	operand1 is less than or equal to operand2 (both operands should be integers)	|2
+
+
+## READ
+```bash
+read input
+echo "Welcome $input" #must use double quotes"
+> Welcome input_name
+echo "Greetings $USER, your current working directory is $PWD"
+> Greetings prashantb1984, your current working directory is /home/prashantb1984
+```
+
+## No space around assignment operator
+- bash gets unhappy if you leave a space on either side of the = sign. For example, the following gives an error message:
+```bash
+X = hello
+```
+
+## Why doesn't bash allow the C like for loops
+- As it happens, this is discouraged for a reason: bash is an interpreted language, and a rather slow one for that matter. For this reason, heavy iteration is discouraged.
+
 ## TODOS
 ```
 uname
