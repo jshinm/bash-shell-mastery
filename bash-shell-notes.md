@@ -83,6 +83,10 @@ sed -n 10p text.txt
 variable=`echo "options; expression" | bc`
 
 echo "scale = 3; $input" | bc -l
+
+#arithmetic within echo doesn't involve brackets
+#if bracket used, the output is always integer not float
+echo "scale=3; $tmp/$cnt" | bc -l
 ```
 
 ## Printf
