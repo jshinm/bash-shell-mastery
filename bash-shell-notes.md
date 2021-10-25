@@ -166,6 +166,58 @@ do
 done
 ```
 
+## Conditional Statements
+```bash
+if condition1
+then
+	statement1
+	statement2
+	..........
+elif condition2
+then
+	statement3
+	statement4
+	........    
+elif condition3
+then
+	statement5
+	statement6
+	........    
+else condtion4 #else isn't followed by then
+    statement7
+fi
+```
+
+## Conditional using brackets
+```bash
+# if [ operand1 operator operand2 ] then statement fi
+# the space between operands and operator is crucial
+
+#!/bin/bash
+X=3
+Y=4
+empty_string=""
+if [ $X -lt $Y ]	# is $X less than $Y ? 
+then
+	echo "\$X=${X}, which is smaller than \$Y=${Y}"
+fi
+
+if [ -n "$empty_string" ]; then
+	echo "empty string is non_empty"
+fi
+
+if [ -e "${HOME}/.fvwmrc" ]; then 			# test to see if ~/.fvwmrc exists
+	echo "you have a .fvwmrc file"
+	if [ -L "${HOME}/.fvwmrc" ]; then 		# is it a symlink ?  
+		echo "it's a symbolic link"
+	elif [ -f "${HOME}/.fvwmrc" ]; then 	# is it a regular file ?
+		echo "it's a regular file"
+	fi
+else
+	echo "you have no .fvwmrc file"
+fi
+```
+
 ## List of test operators
 
 | operator | produces true if...  | number of operands  |
@@ -193,6 +245,17 @@ echo "Greetings $USER, your current working directory is $PWD"
 > Greetings prashantb1984, your current working directory is /home/prashantb1984
 ```
 
+## Mathmatical operation
+```bash
+read a
+read b
+
+echo $[a+b] #$ sign comes before the whole bracket, not individually on variables
+echo $[a-b]
+echo $[a*b]
+echo $[a/b]
+```
+
 ## No space around assignment operator
 - bash gets unhappy if you leave a space on either side of the = sign. For example, the following gives an error message:
 ```bash
@@ -201,6 +264,15 @@ X = hello
 
 ## Why doesn't bash allow the C like for loops
 - As it happens, this is discouraged for a reason: bash is an interpreted language, and a rather slow one for that matter. For this reason, heavy iteration is discouraged.
+
+## Variable expansion
+```bash
+#!/bin/bash
+LS="ls"
+LS_FLAGS="-al"
+
+$LS $LS_FLAGS $HOME
+```
 
 ## TODOS
 ```
