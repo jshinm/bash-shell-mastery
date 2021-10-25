@@ -241,8 +241,13 @@ fi
 read input
 echo "Welcome $input" #must use double quotes"
 > Welcome input_name
+
 echo "Greetings $USER, your current working directory is $PWD"
 > Greetings prashantb1984, your current working directory is /home/prashantb1984
+
+# read only one char
+read -n1 input #if input is {abcd}
+echo "$input" #the stdout is "a"
 ```
 
 ## Mathmatical operation
