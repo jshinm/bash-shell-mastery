@@ -218,6 +218,15 @@ else
 fi
 ```
 
+## Conditional syntax
+```bash
+# for numeric comparison single bracket used
+if [ $val1 -eq $val2 ]; then echo "equal numbers" fi
+
+# for string comparison double bracket used
+if [[ $val == "val" ]]; then echo "equal char" fi
+```
+
 ## List of test operators
 
 | operator | produces true if...  | number of operands  |
