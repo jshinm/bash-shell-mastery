@@ -198,11 +198,30 @@ awk '{ print $2, $1 }'
 
 ## For loop
 ```bash
+#basic loop structure
 for variable in {start..end..increments}
 do
    command 1
    command 2
    echo "$variable"
+done
+
+#external iterator
+for var in $(seq 1 1 $total)
+do
+    command
+done
+
+#c-like loop
+for (( init; condition; step ))
+do
+    command
+done
+
+#infinite loop
+for (( ; ; ))
+do
+   echo "infinite loops [ hit CTRL+C to stop]"
 done
 ```
 
