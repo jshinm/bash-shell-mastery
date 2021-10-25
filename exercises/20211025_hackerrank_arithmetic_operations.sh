@@ -7,3 +7,7 @@ read input;
 #scale indicates rounding at decimal points including semicolon
 # | bc carries out arithmetic operation from string input
 echo "scale = 3; $input" | bc -l
+
+#rounds up to 3rd decimal point
+read input;
+printf %.3f $(echo "$input" | bc -l)
