@@ -76,6 +76,14 @@ sed -n 10p text.txt
 
 ## ECHO
 - bash version of print
+```bash
+#bash calculator: arithmetic operation from string
+#[-l] tag outputs as decimal
+#options: [scale = 3] round up to 3rd decimal points
+variable=`echo "options; expression" | bc`
+
+echo "scale = 3; $input" | bc -l
+```
 
 ## SORT
 - sorts 
@@ -208,7 +216,7 @@ fi
 
 if [ -e "${HOME}/.fvwmrc" ]; then 			# test to see if ~/.fvwmrc exists
 	echo "you have a .fvwmrc file"
-	if [ -L "${HOME}/.fvwmrc" ]; then 		# is it a symlink ?  
+	if [ -L "${HOME}/.fvwmrc" ]; then 		# is it a symlink ?
 		echo "it's a symbolic link"
 	elif [ -f "${HOME}/.fvwmrc" ]; then 	# is it a regular file ?
 		echo "it's a regular file"
