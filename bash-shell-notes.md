@@ -185,6 +185,12 @@ cat soccer_scores.csv | cut -d "," -f 2 | tail -n +2 | sort | uniq -c
 > 13 Arda
 > 8 Beroe
 > 9 Botev
+
+#the following uses tab as a delimiter and grabs first 3 fields
+while read line
+do
+echo "$line" | cut -f1-3 -d$'\t'
+done
 ```
 
 ## AWK
