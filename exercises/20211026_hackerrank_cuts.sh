@@ -24,3 +24,9 @@ while read line
 do
 echo "$line" | cut -f1-3 -d$'\t'
 done
+
+# Print the characters from thirteenth position to the end.
+while read line
+do
+echo "$line" | cut -b13-
+done
