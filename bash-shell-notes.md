@@ -189,7 +189,13 @@ cat soccer_scores.csv | cut -d "," -f 2 | tail -n +2 | sort | uniq -c
 #the following uses tab as a delimiter and grabs first 3 fields
 while read line
 do
-echo "$line" | cut -f1-3 -d$'\t'
+echo "$line" | cut -f1-3 -d$'\t' #here single quote must be used
+done
+
+#the following stdin "hello world hi" will yield "hello" from the following scripts
+while read line
+do
+echo "$line" | cut -f4 -d" "
 done
 ```
 
