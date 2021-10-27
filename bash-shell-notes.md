@@ -52,6 +52,16 @@ cat state.txt | head -n 3 | cut -d ' ' -f 1 > list.txt
 ```
 ## TAIL/HEAD
 - tail / head - n: see 'n' items from tail or head
+```bash
+#first 20 lines from the file
+head -n 20 [filename]
+
+#first 20 char from the file
+head -c 20 [filename]
+
+# Display the lines (from line number 12 to 22, both inclusive) of a given text file.
+head -n 22 | tail -n 11
+```
 
 ## WC
 - word count (-w for words, -l for lines)
