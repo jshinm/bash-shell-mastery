@@ -216,7 +216,14 @@ awk '{ print $2, $1 }'
 ```
 
 ## TR
+- -c: select complementary strings
 - -s: truncate the string with target string, but only remaining one instance (e.g. multiple whitespaces)
+- -d: delete selected strings
+```bash
+# for stdin 'here (there) is the exit'
+# the output should be ' here [there] is the exit'
+tr '()' '[]'
+```
 
 ## For loop
 ```bash
