@@ -217,12 +217,14 @@ awk '{ print $2, $1 }'
 
 ## TR
 - -c: select complementary strings
-- -s: truncate the string with target string, but only remaining one instance (e.g. multiple whitespaces)
+- -s, --squeeze-repeats: replace each input sequence of a repeated character with a single occurrence of that character
 - -d: delete selected strings
 ```bash
 # for stdin 'here (there) is the exit'
 # the output should be ' here [there] is the exit'
 tr '()' '[]'
+
+tr -s ' ' # replace all repeating whitespace into a single whitespace
 ```
 
 ## For loop
