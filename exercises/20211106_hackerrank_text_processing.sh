@@ -7,3 +7,11 @@
 # Output Format
 # Output the text with all parentheses () replaced with box brackets [].
 
+# STDIN
+# int i=(int)5.8
+# (23 + 5)*2
+
+# STDOUT
+# int i=[int]5.8
+# [23 + 5]*2
+tr '()' '[]'
